@@ -1,1 +1,25 @@
+myWienerProcess<-function(T,deltat,R)
+{#opening brace of the Rfunction
+  t<-seq(from=0,to=T,by=deltat)
+  result<-NULL 
+  for(r in 1:R)
+  {
+    z<-cumsum(c(0,sqrt(deltat)*rnorm(n=length(t)-1))) 
+    temp<-data.frame(time=t,value=z,rep=paste(r)) 
+    result<-rbind(result,temp) 
+  } 
+  return(result)
+  #return the Rvariable 'result' as the value of the Rfunction
+}
 
+T<-1 #assign 1 to the Rvariable 'T'
+deltat<-0.001 #assign 0.001 to the Rvariable 'deltat'
+t<-seq(from=0,to=T,by=deltat) #create a sequence 0,0.001,...,1 
+#and assign it to the Rvariable 't'
+
+a<- -0.05
+b<-0.04
+x<-cumsum(c(0,a*deltat+b*sqrt(deltat)*rnorm(n=length(t)-1)))
+temp<-data.frame(time=t,value=x,rep=paste(1), 
+                 drift=paste(a),diffusion=paste(b))
+ggplot(data=temp,aes(x=time,y=value))+geom_line()
