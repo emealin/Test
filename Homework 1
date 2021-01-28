@@ -1,3 +1,30 @@
+#This space is reserved for the teacher:
+#Ex1: NA
+#Ex2 (2pts): 
+#Ex3 (2pts): 
+#Feedback:
+#
+#
+#
+#################################################
+#Rscript for HW1
+
+#Group nr: 5
+#Members:
+# Jussi Laitinen
+# Oskar Lindman
+# Patrik Sunila
+# Alina-Emelie Andersson
+#Member whose quiz variant is used for coding:
+#...
+
+#Question 2. RNGkind(sample.kind = ′Rejection′)
+#Combine/modify the Rcode from Exercises 7 and 12 from Lab1 to design an Rfunction which will generate paths of the Generalized Wiener Process (paths should be tagged with path index, drift coefficient and diffusion coefficient).
+#SET RANDOM SEED TO 2141.
+#Use your Rfunction to generate 6 paths of the Generalized Wiener Process on [0,2.3] (use time-step Δt=0.01) with parameters a=−0.7, b=0.1. Using Rfunction(s) of the Rpackage ggplot2, plot the paths accordingly.
+#SET RANDOM SEED TO 2141. Repeat for a=−0.7, b=0 (with everything else the same).
+#SET RANDOM SEED TO 2141. Repeat for a=0, b=1 (with everything else the same).
+
 myWienerProcess<-function(T,deltat,R)
 {#opening brace of the Rfunction
   t<-seq(from=0,to=T,by=deltat)
